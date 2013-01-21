@@ -4,7 +4,7 @@ betfair-horses
 Overview
 --------
 
-*betfair-horses* is a Java layer around the Betfair APIs that I wrote to support an algorithmic betting project
+**betfair-horses** is a Java layer around the Betfair APIs that I wrote to support an algorithmic betting project
 on which I was working. As my focus was on horse racing, the code is geared that way; however, many of the
 features and approaches found here can be used and extended to work for other betting markets.
 
@@ -21,7 +21,7 @@ Features
 SampleApp
 ---------
 
-Look at `com.scidef.betfair.sample.SampleApp` for a simple example of how to use *betfair-horses*.
+Look at `com.scidef.betfair.sample.SampleApp` for a simple example of how to use **betfair-horses**.
 
 Forthcoming
 -----------
