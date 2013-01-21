@@ -21,7 +21,7 @@ Features
 SampleApp
 ---------
 
-Look at `com.scidef.betfair.sample.SampleApp` for a simple example of how to use **betfair-horses**.
+Look at [`SampleApp`](https://github.com/tompersona/betfair-horses/blob/master/src/main/java/com/scidef/betfair/sample/SampleApp.java) for a simple example of how to use **betfair-horses**.
 
 Forthcoming
 -----------
