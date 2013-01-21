@@ -220,7 +220,7 @@ public class HorseRacing {
             login();
         }
 
-        GetMarketPricesResp getMarketPricesResp = null;
+        GetMarketPricesResp getMarketPricesResp;
         try {
             getMarketPricesResp = exchangeAPI.getMarketPrices(marketId);
         } catch (ExceededMaxRetriesException e) {
@@ -332,7 +332,8 @@ public class HorseRacing {
             Map<MarketSummary, List<RunnerPricesWrapper>> marketsMap = eventsMapEntry.getValue();
             for (Map.Entry<MarketSummary, List<RunnerPricesWrapper>> marketsMapEntry : marketsMap.entrySet()) {
                 MarketSummary summary = marketsMapEntry.getKey();
-                sb.append("  Market: ").append(getMarketNameWithTime(summary)).append("\n");
+                sb.append("  Market: ").append(summary.getMarketId()).append(" - ")
+                        .append(getMarketNameWithTime(summary)).append("\n");
                 List<RunnerPricesWrapper> runnerPricesWrappers = marketsMapEntry.getValue();
                 for (RunnerPricesWrapper runnerPricesWrapper : runnerPricesWrappers) {
                     sb.append("    Selection ID: ").append(runnerPricesWrapper.getRunnerPrices().getSelectionId())
