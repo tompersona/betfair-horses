@@ -45,7 +45,7 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import static com.scidef.betfair.api.TestConstant.BET_ID;
+import static com.scidef.betfair.api.TestConstant.BET_ID_1;
 import static com.scidef.betfair.api.TestConstant.MARKET_ID;
 import static com.scidef.betfair.api.TestConstant.SESSION_TOKEN;
 import static org.hamcrest.CoreMatchers.any;
@@ -198,10 +198,10 @@ public class ExchangeAPITest {
         when(resp.getErrorCode()).thenReturn(GetBetErrorEnum.OK);
         when(exchangeService.getBet((GetBetReq) anyObject())).thenReturn(resp);
 
-        assertThat(exchangeAPI.getBet(BET_ID), is(resp));
+        assertThat(exchangeAPI.getBet(BET_ID_1), is(resp));
 
         verify(globalAPI).getSessionToken();
-        verify(exchangeService).getBet(argThat(is(aGetBetReqWithBetId(BET_ID))));
+        verify(exchangeService).getBet(argThat(is(aGetBetReqWithBetId(BET_ID_1))));
     }
 
     @Test(expected = BetfairException.class)
@@ -212,7 +212,7 @@ public class ExchangeAPITest {
         when(resp.getHeader()).thenReturn(header);
         when(exchangeService.getBet((GetBetReq) anyObject())).thenReturn(resp);
 
-        exchangeAPI.getBet(BET_ID);
+        exchangeAPI.getBet(BET_ID_1);
     }
 
     @Test

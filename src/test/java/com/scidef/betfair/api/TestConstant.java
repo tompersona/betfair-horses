@@ -1,7 +1,7 @@
 package com.scidef.betfair.api;
 
 /**
- * Constant value used by the various tests in this package.
+ * Constant values used by the various tests in this package.
  * <p/>
  * User: tompearson
  * Date: 20/01/2013
@@ -14,7 +14,8 @@ public class TestConstant {
     public static final String PASSWORD = "password";
     public static final int PARENT_ID = 131;
     public static final int MARKET_ID = 53;
-    public static final long BET_ID = 12345L;
+    public static final long BET_ID_1 = 12345L;
+    public static final long BET_ID_2 = 67890L;
     public static final String COMPRESSED_MARKET_DATA =
             "101442426~GBP~ACTIVE~0~1~BLA\\:asd~true~5.0~1274885395669~~Y:4056154~0~24778.26~1.81~" +
                     "~54.1~false~3.12~1.89~~|1.79~54.64~L~1~1.78~82.0~L~2~1.77~117.55~L~3~|1.81~18.46" +
