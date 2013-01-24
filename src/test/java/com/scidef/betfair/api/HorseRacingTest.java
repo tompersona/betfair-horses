@@ -69,6 +69,28 @@ public class HorseRacingTest {
     }
 
     @Test
+    public void testSuccessfulLogout() throws BetfairException {
+        horseRacing.login();
+
+        assertThat(horseRacing.isLoggedIn(), is(true));
+
+        horseRacing.logout();
+
+        assertThat(horseRacing.isLoggedIn(), is(false));
+
+        verify(globalAPI).login(USERNAME, PASSWORD, GlobalAPI.FREE_API_PRODUCT_ID);
+        verify(globalAPI).logout();
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testFailedLogout() throws BetfairException {
+        doThrow(new BetfairException()).when(globalAPI).logout();
+
+        horseRacing.login();
+        horseRacing.logout();
+    }
+
+    @Test
     public void testGetEvents() throws BetfairException {
         horseRacing.setEventInclusionPatterns(
                 Collections.singletonList(Pattern.compile("^[A-Za-z]*? [0-9]*?[a-z][a-z] [A-Za-z]*?$"))

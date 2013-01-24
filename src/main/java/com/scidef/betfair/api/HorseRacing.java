@@ -76,6 +76,19 @@ public class HorseRacing {
     }
 
     /**
+     * Logout of the current Betfair session.
+     */
+    public void logout() {
+        try {
+            globalAPI.logout();
+        } catch (BetfairException e) {
+            LOG.error("Failed to login.", e);
+            throw new RuntimeException(e);
+        }
+        loggedIn = false;
+    }
+
+    /**
      * Retrieve all GB and IRE horse racing events.
      *
      * @return a list of <code>BFEvent</code>s

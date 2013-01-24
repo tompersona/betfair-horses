@@ -22,6 +22,11 @@ public class SampleApp {
     public static final String USERNAME = ""; // fill in Betfair username here
     public static final String PASSWORD = ""; // fill in Betfair password here
 
+    // NB - obviously putting username and password details directly in the code
+    // is a _bad_ idea for anything other than simple local test purposes; if
+    // running on a server, these details should either be in a secure properties
+    // file or passed in on the command line
+
     public static void main(String[] args) throws BetfairException {
         // setup the HorseRacing class for use
         GlobalAPI globalAPI = new GlobalAPI();
@@ -46,6 +51,7 @@ public class SampleApp {
         HorseRacing.prettyPrintEventsMapToStdout(
                 horseRacing.getEventsMap(new GregorianCalendar())
         );
+        horseRacing.logout();
     }
 
 }
